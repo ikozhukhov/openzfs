@@ -576,11 +576,12 @@ DCMSGDOMAINPOFILE = $(DCMSGDOMAIN)/$(DCFILE:.dc=.po)
 
 CLOBBERFILES += $(POFILE) $(POFILES)
 COMPILE.cpp= $(CC) -E -C $(CFLAGS) $(CPPFLAGS)
-XGETTEXT= /usr/bin/xgettext
+ILLUMOSXGETTEXT= /usr/bin/xgettext
 XGETFLAGS= -c TRANSLATION_NOTE
 GNUXGETTEXT= /usr/gnu/bin/xgettext
 GNUXGETFLAGS= --add-comments=TRANSLATION_NOTE --keyword=_ \
 	--strict --no-location --omit-header
+XGETTEXT= $(ILLUMOSXGETTEXT)
 BUILD.po= $(XGETTEXT) $(XGETFLAGS) -d $(<F) $<.i ;\
 	$(RM)	$@ ;\
 	$(SED) "/^domain/d" < $(<F).po > $@ ;\

@@ -249,7 +249,7 @@ lint: $(SUBDIRS)
 _msg:	$(MSGDOMAIN) catalog
 
 catalog:
-	sh ./makelibccatalog.sh $(MSGDOMAIN)
+	XGETTEXT=$(XGETTEXT) $(SHELL) ./makelibccatalog.sh $(MSGDOMAIN)
 
 $(MSGDOMAIN):
 	$(INS.dir)

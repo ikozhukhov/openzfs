@@ -29,7 +29,8 @@
 # Copyright 2011 Nexenta Systems, Inc.  All rights reserved.
 #
 
-XGETTEXT=xgettext
+XGETTEXT=${XGETTEXT:-xgettext}
+GETTEXT=${GETTEXT:-gettext}
 MSGDIR=$1
 
 #
@@ -41,7 +42,7 @@ MSGDIR=$1
 #
 #	get list of files
 #
-FILES=`grep gettext *.c | sed "s/:.*//" | sort | sed "s/\.c//" | uniq`
+FILES=`grep ${GETTEXT} *.c | sed "s/:.*//" | sort | sed "s/\.c//" | uniq`
 
 
 #

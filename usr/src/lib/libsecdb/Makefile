@@ -82,9 +82,9 @@ install_data:	$(ETCSECURITYFILES) $(ETCSECURITYDFILES) $(ETCFILES) \
 		$(METHODDIR) $(METHOD)
 
 ATTR_FILES =	auth_attr exec_attr prof_attr user_attr
-${ATTR_FILES}:	$$@.txt ${CLASS_SCR_SRC_DIR}/i.rbac
+$(ATTR_FILES):	$$@.txt $(CLASS_SCR_SRC_DIR)/i.rbac
 	> $@
-	$(ECHO) $@.txt $@ | $(SHELL) ${CLASS_SCR_SRC_DIR}/i.rbac
+	$(ECHO) $@.txt $@ | NAWK=$(AWK) $(SHELL) $(CLASS_SCR_SRC_DIR)/i.rbac
 
 $(ETCSECURITYDFILES) $(ETCDFILES): $$(@D)
 

@@ -10,7 +10,7 @@ include ../Makefile.solaris.defs
 
 GRUB		= grub
 GRUB_OBJS	= asmstub.o main.o
-$(GRUB)		:= LIBS = ../stage2/libgrub.a ../lib/libcommon.a -lcurses
+$(GRUB)		:= LIBS = ../stage2/libgrub.a ../lib/libcommon.a -lcurses -m32
 $(GRUB)		:= LDFLAGS += $(LDLIBS.cmd)
 $(GRUB)		:= CCLD = $(CC)
 

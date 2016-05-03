@@ -16,7 +16,7 @@ include ../Makefile.solaris.defs
 
 INCLUDES	= -I. -I..
 CCASFLAGS	+= -O2 -fno-builtin -nostdinc
-LDFLAGS		+= -nostdlib -N -Ttext 7C00
+LDFLAGS		+= -m elf_i386_sol2 -nostdlib -N -Ttext 7C00
 LIBS		=
 
 

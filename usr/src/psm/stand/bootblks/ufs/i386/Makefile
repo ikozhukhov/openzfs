@@ -32,12 +32,12 @@ BASEDIR = ../..
 include $(BASEDIR)/ufs/Makefile.ufs
 
 
-CC		= $(GCC_ROOT)/bin/gcc
+CC		= $(GCC_ROOT)/bin/gcc -m32
 ASFLAGS		= -B$(GCC_ROOT)/bin/ -fno-builtin -nostdinc
 CPPFLAGS	=
 
 LD		= $(GNU_ROOT)/bin/gld
-LDFLAGS		= -nostdlib -N -Ttext 600
+LDFLAGS		= -m elf_i386_sol2 -nostdlib -N -Ttext 600
 
 OBJCOPY		= $(GNU_ROOT)/bin/gobjcopy
 

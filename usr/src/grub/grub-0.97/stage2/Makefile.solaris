@@ -43,12 +43,12 @@ STAGE2_CFLAGS	= -Os -fno-builtin -nostdinc \
 $(STAGE2_NETBOOT)STAGE2_CFLAGS	+= $(NETBOOT_CFLAGS)
 #STAGE2_CFLAGS	+= $(HERCULES_CFLAGS)
 
-NBLOADER_LINK	= -nostdlib -N -Ttext 0
-PRE_STAGE2_LINK	= -nostdlib -N -Ttext 8200
-PXELOADER_LINK	= -nostdlib -N -Ttext 7C00
-STAGE1_5_LINK	= -nostdlib -N -Ttext 2000
-START_ELTORITO_LINK = -nostdlib -N -Ttext 7C00
-START_LINK	= -nostdlib -N -Ttext 8000
+NBLOADER_LINK	= -m elf_i386_sol2 -nostdlib -N -Ttext 0
+PRE_STAGE2_LINK	= -m elf_i386_sol2 -nostdlib -N -Ttext 8200
+PXELOADER_LINK	= -m elf_i386_sol2 -nostdlib -N -Ttext 7C00
+STAGE1_5_LINK	= -m elf_i386_sol2 -nostdlib -N -Ttext 2000
+START_ELTORITO_LINK = -m elf_i386_sol2 -nostdlib -N -Ttext 7C00
+START_LINK	= -m elf_i386_sol2 -nostdlib -N -Ttext 8000
 
 LIBDRIVERS	= ../netboot/libdrivers.a
 

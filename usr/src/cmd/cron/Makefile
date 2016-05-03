@@ -203,7 +203,7 @@ att1.c :	att1.y
 
 att2.c :	att2.l att2.ed att1.c
 		$(LEX) att2.l
-		ed - lex.yy.c < att2.ed
+		$(ED) - lex.yy.c < att2.ed
 		$(MV) lex.yy.c att2.c
 
 # Don't re-install directories installed by Targetdirs

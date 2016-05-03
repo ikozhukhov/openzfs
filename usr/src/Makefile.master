@@ -189,6 +189,7 @@ TAR=		/usr/bin/tar
 ASTBINDIR=	/usr/ast/bin
 MSGCC=		$(ASTBINDIR)/msgcc
 MSGFMT=		/usr/bin/msgfmt -s
+ED=		/usr/bin/ed
 
 FILEMODE=	644
 DIRMODE=	755

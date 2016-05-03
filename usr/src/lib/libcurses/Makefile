@@ -82,8 +82,6 @@ scrfiles:	$(SCRFILES)
 $(SUBDIRS):	FRC
 	@cd $@; pwd; $(MAKE) $(TARGET)
 
-ED = ed
-
 screen/curses.h:	screen/curses.ed screen/keycaps screen/tmp
 	(cd screen; $(ED) - < curses.ed)
 

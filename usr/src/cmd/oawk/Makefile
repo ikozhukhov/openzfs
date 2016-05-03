@@ -92,7 +92,7 @@ awk.lx.c:	awk.lx.l
 
 tmptoken.c :	tokenscript token.c
 		$(RM) $@
-		ed - < tokenscript
+		$(ED) - < tokenscript
 
 proctab.c :	$(MAKEPRCTAB)
 		$(RM) $@

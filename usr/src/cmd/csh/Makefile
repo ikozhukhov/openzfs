@@ -17,7 +17,6 @@
 
 include ../Makefile.cmd
 
-ED= ed
 #
 # For message catalogue files
 #

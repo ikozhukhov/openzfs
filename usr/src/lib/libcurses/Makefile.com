@@ -156,7 +156,6 @@ LDLIBS += -lc
 
 CPPFLAGS += -I../screen -I../../common/inc
 
-ED = ed
 RM = rm -f
 
 #

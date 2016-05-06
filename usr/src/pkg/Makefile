@@ -103,6 +103,8 @@ EXCEPTIONS= packaging
 
 PKGMOGRIFY= pkgmogrify
 
+VALIDATEPKG= $(PYTHON_PKG) $(SRC)/tools/scripts/validate_pkg
+
 #
 # Always build the redistributable repository, but only build the
 # nonredistributable bits if we have access to closed source.
@@ -684,20 +686,20 @@ stage-licenses: license-list FRC
 		}' license-list` > /dev/null;
 
 protocmp: makesilent
-	@validate_pkg -a $(PKGMACH) -v \
+	$(PKGDEBUG)$(VALIDATEPKG) -a $(PKGMACH) -v \
 		$(EXCEPTIONS:%=-e $(CODEMGR_WS)/exception_lists/%) \
 		-m $(PDIR) -p $(PKGROOT) -p $(TOOLSROOT)
 
 pmodes: makesilent
-	@validate_pkg -a $(PKGMACH) -M -m $(PDIR) \
-		-e $(CODEMGR_WS)/exception_lists/pmodes 
+	$(PKGDEBUG)$(VALIDATEPKG) -a $(PKGMACH) -M -m $(PDIR) \
+		-e $(CODEMGR_WS)/exception_lists/pmodes
 
 check: protocmp pmodes
 
 protolist: proto_list_$(PKGMACH)
 
 proto_list_$(PKGMACH): $(PROC_PKGS)
-	@validate_pkg -a $(PKGMACH) -L -m $(PDIR) > $(@)
+	$(PKGDEBUG)$(VALIDATEPKG) -a $(PKGMACH) -L -m $(PDIR) > $(@)
 
 $(PROC_PKGS): $(PDIR)
 

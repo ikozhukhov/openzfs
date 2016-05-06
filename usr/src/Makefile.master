@@ -177,6 +177,7 @@ PERL_ARCH =		i86pc-solaris-64int
 $(SPARC_BLD)PERL_ARCH =	sun4-solaris-64int
 PYTHON_26=	/usr/bin/python2.6
 PYTHON=		$(PYTHON_26)
+PYTHON_PKG=	$(PYTHON)
 SORT=		/usr/bin/sort
 TOUCH=		/usr/bin/touch
 WC=		/usr/bin/wc
